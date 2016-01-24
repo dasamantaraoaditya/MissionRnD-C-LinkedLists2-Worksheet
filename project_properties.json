@@ -1,0 +1,1 @@
+{"project_name":"C-LinkedLists2-Worksheet","project_gitrepo":"https://github.com/mission-rnd/C-LinkedLists2.git","project_page":"http://mission-rnd.github.io/C/part-2/C-LinkedLists2.htm","language":"c","project_validator":"vstest.console.exe","project_steps":["reverseLinkedList","linkedListMedian","insertAtEveryKthNode","merge2LinkedLists"]}
