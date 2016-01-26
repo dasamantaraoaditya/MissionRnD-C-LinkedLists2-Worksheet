@@ -12,12 +12,46 @@ NOTES:
 */
 
 #include <stdio.h>
-
+#include<stdlib.h>
 struct node {
 	int num;
 	struct node *next;
 };
 
 struct node * merge2LinkedLists(struct node *head1, struct node *head2) {
-	return NULL;
+	struct node *ans_head = NULL, *head = NULL;
+
+	if (head1 == NULL)
+		return head2;
+	if (head2 == NULL)
+		return head1;
+	if (head1->num < head2->num){
+		ans_head = head = head1;
+		head1 = head1->next;
+	}
+	else
+	{
+		ans_head = head = head2;
+		head2 = head2->next;
+	}
+	while (head1 != NULL&&head2 != NULL){
+		if (head1->num < head2->num){
+			ans_head->next = head1;
+			ans_head = ans_head->next;
+			head1 = head1->next;
+		}
+		else
+		{
+			ans_head->next = head2;
+			ans_head = head2;
+			head2 = head2->next;
+		}
+	}
+	if (head1 != NULL){
+		ans_head->next = head1;
+	}
+	if (head2 != NULL){
+		ans_head->next = head2;
+	}
+	return head;
 }
